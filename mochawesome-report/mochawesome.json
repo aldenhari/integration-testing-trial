@@ -1,0 +1,264 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 8,
+    "passes": 6,
+    "pending": 0,
+    "failures": 2,
+    "start": "2021-09-19T04:53:08.039Z",
+    "end": "2021-09-19T04:53:08.102Z",
+    "duration": 63,
+    "testsRegistered": 8,
+    "passPercent": 75,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "99bceab1-b893-4e19-9758-66f8972be139",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ec6bda80-4f9b-45a6-bebb-484ef58c103b",
+          "title": "create user",
+          "fullFile": "/home/spex/Documents/Projects/Koligrum/api-test/API/test/user_test.js",
+          "file": "/API/test/user_test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "System will create user properly",
+              "fullTitle": "create user System will create user properly",
+              "timedOut": false,
+              "duration": 15,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await page.createUser(payload);\nexpect(response.status).to.equal(200);",
+              "err": {},
+              "uuid": "8a97835b-df33-48f2-b306-2556a8e8900b",
+              "parentUUID": "ec6bda80-4f9b-45a6-bebb-484ef58c103b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "User with name Joko will be created",
+              "fullTitle": "create user User with name Joko will be created",
+              "timedOut": false,
+              "duration": 5,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "payload.firstName=\"joko\";\nconst response = await page.createUser(payload);\nexpect(response.status).to.equal(200);",
+              "err": {},
+              "uuid": "93320708-a65e-42e3-ad72-a333cad8a8b6",
+              "parentUUID": "ec6bda80-4f9b-45a6-bebb-484ef58c103b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Send request with empty Gender",
+              "fullTitle": "create user Send request with empty Gender",
+              "timedOut": false,
+              "duration": 7,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "payload.gender=null;\nconst response = await page.createUser(payload);\nexpect(response.status).to.equal(400);",
+              "err": {},
+              "uuid": "ee818223-0be6-41f6-a6eb-0e19976afd7d",
+              "parentUUID": "ec6bda80-4f9b-45a6-bebb-484ef58c103b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Send request with invalid gender",
+              "fullTitle": "create user Send request with invalid gender",
+              "timedOut": false,
+              "duration": 4,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "payload.gender=\"UNKNOWN\";\nconst response = await page.createUser(payload);\nexpect(response.status).to.equal(400);",
+              "err": {},
+              "uuid": "07d785a8-97d8-49a0-9d9b-0bb987b72cff",
+              "parentUUID": "ec6bda80-4f9b-45a6-bebb-484ef58c103b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8a97835b-df33-48f2-b306-2556a8e8900b",
+            "93320708-a65e-42e3-ad72-a333cad8a8b6",
+            "ee818223-0be6-41f6-a6eb-0e19976afd7d",
+            "07d785a8-97d8-49a0-9d9b-0bb987b72cff"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 31,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "179e06fc-09ed-4528-ad62-a9fe936df310",
+          "title": "create user 2",
+          "fullFile": "/home/spex/Documents/Projects/Koligrum/api-test/API/test/user_test.js",
+          "file": "/API/test/user_test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "System will create user properly",
+              "fullTitle": "create user 2 System will create user properly",
+              "timedOut": false,
+              "duration": 6,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const response = await page.createUser(payload);\nexpect(response.status).to.equal(200);",
+              "err": {
+                "message": "AssertionError: expected 400 to equal 200",
+                "estack": "AssertionError: expected 400 to equal 200\n    at Context.<anonymous> (API/test/user_test.js:60:36)\n    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+                "diff": "- 400\n+ 200\n"
+              },
+              "uuid": "d8e2057a-96ca-4b0b-a7a8-dc9b18b4a1f5",
+              "parentUUID": "179e06fc-09ed-4528-ad62-a9fe936df310",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "User with name Joko will be created",
+              "fullTitle": "create user 2 User with name Joko will be created",
+              "timedOut": false,
+              "duration": 4,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "payload.firstName=\"joko\";\nconst response = await page.createUser(payload);\nexpect(response.status).to.equal(200);",
+              "err": {
+                "message": "AssertionError: expected 400 to equal 200",
+                "estack": "AssertionError: expected 400 to equal 200\n    at Context.<anonymous> (API/test/user_test.js:65:36)\n    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+                "diff": "- 400\n+ 200\n"
+              },
+              "uuid": "c10a6244-ba4e-43d6-8139-e6c3a625f88d",
+              "parentUUID": "179e06fc-09ed-4528-ad62-a9fe936df310",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Send request with empty Gender",
+              "fullTitle": "create user 2 Send request with empty Gender",
+              "timedOut": false,
+              "duration": 5,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "payload.gender=null;\nconst response = await page.createUser(payload);\nexpect(response.status).to.equal(400);",
+              "err": {},
+              "uuid": "dd6478f4-1abd-4f97-9fdb-320896933cb2",
+              "parentUUID": "179e06fc-09ed-4528-ad62-a9fe936df310",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Send request with invalid gender",
+              "fullTitle": "create user 2 Send request with invalid gender",
+              "timedOut": false,
+              "duration": 5,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "payload.gender=\"UNKNOWN\";\nconst response = await page.createUser(payload);\nexpect(response.status).to.equal(400);",
+              "err": {},
+              "uuid": "18304025-2501-4f1b-844e-2b906d33992d",
+              "parentUUID": "179e06fc-09ed-4528-ad62-a9fe936df310",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "dd6478f4-1abd-4f97-9fdb-320896933cb2",
+            "18304025-2501-4f1b-844e-2b906d33992d"
+          ],
+          "failures": [
+            "d8e2057a-96ca-4b0b-a7a8-dc9b18b4a1f5",
+            "c10a6244-ba4e-43d6-8139-e6c3a625f88d"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 20,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "9.1.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir/report/mochawesome/npm": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}
