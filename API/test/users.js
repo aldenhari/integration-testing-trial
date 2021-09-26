@@ -92,7 +92,7 @@ describe('update user information and then delete it',()=>{
         expect(response.status).to.equal(200);
     });
     it(`${scenario.positive.updatingUser.title}`,async()=>{
-        const updatedData = scenario.positive.getUserById.data.userPayload;
+        const updatedData = Object.assign({},scenario.positive.getUserById.data.userPayload);
         Object.keys(scenario.positive.updatingUser.data.userPayload).map(item=>{
             updatedData[item]=scenario.positive.updatingUser.data.userPayload[item];
         });
